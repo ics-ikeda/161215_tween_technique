@@ -14,13 +14,18 @@
     canvas {
       margin: 50px 0;
       background-color: #fbf9eb;
+      display: none;
     }
     #root {
       width: 720px;
       margin: auto;
     }
+    .visible {
+      display: block;
+    }
   </style>
   <script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+      
 </head>
 <body>
   <div id="root">
@@ -226,7 +231,22 @@
         });
       })();
     </script>
-    
   </div>
+  
+  <script>
+    // ハッシュで表示を切り替える
+    var hash = location.hash;
+    if (hash.length) {
+      document.getElementById(hash.substr(1, hash.length)).setAttribute("class", "visible");
+    }
+    else {
+      document.getElementById("move_01").setAttribute("class", "visible");
+      document.getElementById("move_02").setAttribute("class", "visible");
+      document.getElementById("move_03").setAttribute("class", "visible");
+      document.getElementById("expand").setAttribute("class", "visible");
+      document.getElementById("rotate").setAttribute("class", "visible");
+      document.getElementById("drop").setAttribute("class", "visible");
+    }
+  </script>
 </body>
 </html>
