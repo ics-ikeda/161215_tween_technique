@@ -2,7 +2,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>トゥイーンアニメーション</title>
+  
+  <title>ズルいトゥイーンアニメーション</title>
   <style>
     * {
       margin: 0;
@@ -15,10 +16,12 @@
       margin: 50px 0;
       background-color: #fbf9eb;
       display: none;
+/*      overflow: hidden*/
     }
     #root {
-      width: 720px;
       margin: auto;
+      width: 720px;
+      transform-origin:left top;
     }
     .visible {
       display: block;
@@ -30,7 +33,7 @@
 <body>
   <div id="root">
 
-    <canvas id="move_01" width="720px" height="405px"></canvas>
+    <canvas id="move_01" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("move_01");
@@ -58,7 +61,7 @@
       })();
     </script>
 
-    <canvas id="move_02" width="720px" height="405px"></canvas>
+    <canvas id="move_02" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("move_02");
@@ -93,7 +96,7 @@
       })();
     </script>
 
-    <canvas id="move_03" width="720px" height="405px"></canvas>
+    <canvas id="move_03" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("move_03");
@@ -121,7 +124,7 @@
       })();
     </script>
 
-    <canvas id="expand" width="720px" height="405px"></canvas>
+    <canvas id="expand" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("expand");
@@ -156,7 +159,7 @@
       })();
     </script>
 
-    <canvas id="rotate" width="720px" height="405px"></canvas>
+    <canvas id="rotate" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("rotate");
@@ -195,7 +198,7 @@
       })();
     </script>
 
-    <canvas id="drop" width="720px" height="405px"></canvas>
+    <canvas id="drop" width="720" height="405"></canvas>
     <script>
       (function(){
         var stage = new createjs.Stage("drop");
@@ -234,18 +237,32 @@
   </div>
   
   <script>
+    //リサイズ処理
+    function resize() {
+      var root = document.getElementById("root");
+      var scale = Math.min(window.innerWidth / 720, 1);
+      root.style.transform = "scale(" + scale + ")";
+      root.style.webkitTransform = "scale(" + scale + ")";
+      root.style.MozTransform = "scale(" + scale + ")";
+      root.style.height = root.clientHeight;
+      
+    }
+    window.onresize = resize;
+    resize();
+    
     // ハッシュで表示を切り替える
+    var canvas;
     var hash = location.hash;
+    
     if (hash.length) {
-      document.getElementById(hash.substr(1, hash.length)).setAttribute("class", "visible");
+      canvas = document.getElementById(hash.substr(1, hash.length));
+      canvas.classList.add("visible");
     }
     else {
-      document.getElementById("move_01").setAttribute("class", "visible");
-      document.getElementById("move_02").setAttribute("class", "visible");
-      document.getElementById("move_03").setAttribute("class", "visible");
-      document.getElementById("expand").setAttribute("class", "visible");
-      document.getElementById("rotate").setAttribute("class", "visible");
-      document.getElementById("drop").setAttribute("class", "visible");
+      var canvases = document.getElementsByTagName("canvas");
+      for (canvas of canvases) {
+        canvas.classList.add("visible");
+      }
     }
   </script>
 </body>
