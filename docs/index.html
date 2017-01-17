@@ -254,6 +254,7 @@
     if (hash.length) {
       canvas = document.getElementById(hash.substr(1, hash.length));
       canvas.classList.add("visible");
+      canvas.style.margin = "0";
     }
     else {
       var canvases = document.getElementsByTagName("canvas");
