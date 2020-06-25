@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"> </script>
+    <title>Document</title>
+</head>
+
+<body>
+<img class="straight" src="images/mitarashi_100.png" alt="">
+<img class="curve" src="images/mitarashi_100.png" alt="">
+<style>
+    img{
+        position: absolute;
+    }
+    .straight{
+        opacity: 0.3;
+    }
+</style>
+<script>
+    // 同じイージングで変化させる場合
+    gsap.to(".straight", {duration: 1, x: 520, y: 200, repeat: -1, repeatDelay: 1, ease: "pawer4.quartInOut"});
+
+    // Y座標だけイージングをbackOutに変更した場合
+    gsap.to(".curve", {duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "pawer4.quarInOut"});
+    gsap.to(".curve", {duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "Back.easekOut"});
+</script>
+
+</body>
+
+</html>
