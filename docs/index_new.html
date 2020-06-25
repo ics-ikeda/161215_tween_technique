@@ -53,11 +53,11 @@
     </style>
     <script>
         // 同じイージングで変化させる場合
-        gsap.to(".line_straight", { duration: 1, x: 520, y: 200, repeat: -1, repeatDelay: 1, ease: "pawer4.quartInOut" });
+        gsap.to(".line_straight", { duration: 1, x: 520, y: 200, repeat: -1, repeatDelay: 1, ease: "pawer4.in" });
 
         // Y座標だけイージングをbackOutに変更した場合
-        gsap.to(".line_curve", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.quartInOut" });
-        gsap.to(".line_curve", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "Back.easeOut" });
+        gsap.to(".line_curve", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.in" });
+        gsap.to(".line_curve", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "Back.inOut" });
 
 　　　　　//拡大表示
         gsap.from(".scale_normal", { duration: 1, x:-100, y:-150, repeat: -1, repeatDelay: 1, scale: 0.1, ease: "pawer4.quartInOut" });
