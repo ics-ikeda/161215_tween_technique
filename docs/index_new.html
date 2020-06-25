@@ -24,6 +24,11 @@
         <img class="line_linear" src="images/mitarashi_100.png" alt="">
     </div>
 
+    <div class="bound">
+        <img class="bound_left" src="images/mitarashi_200.png" alt="">
+        <img class="bound_right" src="images/mitarashi_200.png" alt="">
+    </div>
+
     <style>
         img {
             position: absolute;
@@ -52,6 +57,33 @@
         .scale_normal {
             opacity: 0.3;
         }
+
+        .bound {
+            width: 720px;
+            height: 405px;
+            background-color: #fbf9eb;
+            margin-top: 50px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+        .bound_left{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-right: 50px;
+            margin-top: 100px;
+        }
+        .bound_right{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            
+        }
+        
     </style>
     <script>
         // 同じイージングで変化させる場合
@@ -75,6 +107,10 @@
         // Y座標だけイージングをlinearに変更した場合
         gsap.to(".line_linear", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.inOut" });
         gsap.to(".line_linear", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "linear" });
+
+        //移動せずスケールを変更した場合
+        gsap.from(".bound_left", { duration: 1, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1.5, ease: "bounce.out" });
+        gsap.from(".bound_right", { duration: 1.5, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1, ease: "bounce.out" });
 
     </script>
 
