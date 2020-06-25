@@ -68,8 +68,8 @@
         gsap.to(".scale_curve", { duration: 1, x:150, y:-50, repeat: -1, repeatDelay: 1, scale: 1, ease: "circ.inOut" });
 
         // Y座標だけイージングをlinearに変更した場合
-        gsap.to(".line_linear", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.quartInOut" });
-        gsap.to(".line_linear", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "Back.easeInOut" });
+        gsap.to(".line_linear", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.inOut" });
+        gsap.to(".line_linear", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "linear" });
 
     </script>
     
