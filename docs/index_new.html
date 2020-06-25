@@ -29,6 +29,11 @@
         <img class="bound_right" src="images/mitarashi_200.png" alt="">
     </div>
 
+    <div class="move">
+        <img class="move_top" src="images/mitarashi_100.png" alt="">
+        <img class="move_bottom" src="images/mitarashi_100.png" alt="">
+    </div>
+
     <style>
         img {
             position: absolute;
@@ -84,6 +89,35 @@
             
         }
         
+        .move {
+            position: relative;
+            width: 720px;
+            height: 405px;
+            background-color: #fbf9eb;
+            margin-top: 50px;
+            
+            
+        }
+        .move_top{
+            position: relative;
+            padding-top: 80px;
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-wrap: wrap;
+
+    
+        }
+        .move_bottom{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
     </style>
     <script>
         // 同じイージングで変化させる場合
@@ -111,6 +145,12 @@
         //移動せずスケールを変更した場合
         gsap.from(".bound_left", { duration: 1, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1.5, ease: "bounce.out" });
         gsap.from(".bound_right", { duration: 1.5, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1, ease: "bounce.out" });
+
+
+        //横移動させた場合
+        gsap.to(".move_top", { duration: 1, x: 545, repeat: -1, repeatDelay: 1, ease: "circ.inOut" });
+        gsap.to(".move_bottom", { duration: 1, rotate: -30, repeat: -1, repeatDelay: 1, ease: "circ.Out" });
+        gsap.to(".move_bottom", { duration: 1, rotate: 10, x: 545, repeat: -1, repeatDelay: 1, ease: "circ.inOut" });
 
     </script>
 
