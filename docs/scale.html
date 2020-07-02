@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <title>ズルいトゥイーンアニメーション</title>
+  <style>
+    .scale {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      overflow: hidden;
+    }
+
+    .scale_curve {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .scale_normal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.3;
+    }
+
+    .scale_curve img, .scale_normal img {
+      position: absolute;
+      top: -200px;
+      left: -200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="scale">
+    <div class="scale_normal">
+      <img src="images/mitarashi_400.png" width="400" height="400" alt="" />
+    </div>
+    <div class="scale_curve">
+      <img src="images/mitarashi_400.png" width="400" height="400" alt="" />
+    </div>
+  </div>
+  <script>
+    // 拡大表示
+    // 同じイージングで変化させる場合
+    gsap.timeline({repeat: -1, repeatDelay: 0.5})
+      .set('.scale_normal', {x: 20, y: 20, scale: 0.1})
+      .to('.scale_normal', {duration: 1, x: 380, y: 200, scale: 1, ease: 'quart.inOut'});
+
+    // 拡大のトゥイーンを追加した場合
+    gsap.timeline({repeat: -1, repeatDelay: 0.5})
+      .set('.scale_curve', {x: 20, y: 20, scale: 0.1})
+      .to('.scale_curve', {duration: 1, x: 380, ease: 'quart.inOut'}, 0)
+      .to('.scale_curve', {duration: 1, y: 200, ease: 'back.out'}, 0)
+      .to('.scale_curve', {duration: 1, scale: 1, ease: 'quart.inOut'}, 0);
+  </script>
+</body>
+</html>
