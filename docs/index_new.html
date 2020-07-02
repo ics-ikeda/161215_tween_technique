@@ -149,8 +149,11 @@
 
         //横移動させた場合
         gsap.to(".move_top", { duration: 1, x: 545, repeat: -1, repeatDelay: 1, ease: "circ.inOut" });
-        gsap.to(".move_bottom", { duration: 1, rotate: -30, repeat: -1, repeatDelay: 1, ease: "circ.Out" });
-        gsap.to(".move_bottom", { duration: 1, rotate: 10, x: 545, repeat: -1, repeatDelay: 1, ease: "circ.inOut" });
+        gsap.to(".move_bottom", { duration: 1, x: 545, repeat: -1, repeatDelay: 1 ,ease: "circ.inOut"});
+        gsap.to(".move_bottom", { duration: 1, rotate: -30, delay:0.1, repeat: -1, repeatDelay: 1 ,ease: "back.out"});
+        gsap.to(".move_bottom", { duration: 1, rotate: 0, delay:0.5, repeat: -1, repeatDelay: 1 ,ease: "back.out"});
+        
+        
 
     </script>
 
