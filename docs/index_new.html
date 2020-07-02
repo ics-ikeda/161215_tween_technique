@@ -40,10 +40,6 @@
 
     </div>
     <style>
-        img {
-            position: absolute;
-            margin: 50px 0;
-        }
 
         .line {
             position: relative;
@@ -54,6 +50,7 @@
         }
 
         .line_straight {
+            position: absolute;
             opacity: 0.3;
         }
 
@@ -66,7 +63,12 @@
         }
 
         .scale_normal {
+            position: absolute;
             opacity: 0.3;
+        }
+
+        .line_linear{
+            position: absolute;
         }
 
         .bound {
@@ -81,14 +83,14 @@
             
         }
         .bound_left{
-            position: relative;
+            position: absolute;
             width: 200px;
             height: 200px;
             margin-right: 50px;
             margin-top: 100px;
         }
         .bound_right{
-            position: relative;
+            position: absolute;
             width: 200px;
             height: 200px;
             margin-top: 100px;
@@ -105,7 +107,7 @@
             
         }
         .move_top{
-            position: relative;
+            position: absolute;
             padding-top: 80px;
             margin: 50px;
             width: 100px;
@@ -116,7 +118,7 @@
     
         }
         .move_bottom{
-            position: relative;
+            position: absolute;
             width: 100px;
             height: 100px;
             margin: 50px;
@@ -134,60 +136,67 @@
             justify-content: center;
         }
         .fall_left{
-            position: relative;
+            position: absolute;
             top: -50px;
             width: 100px;
             height: 100px;
             margin-right: 100px;
-            /* margin-top: 100px; */
+            
         }
         .fall_right{
-            position: relative;
+            position: absolute;
             top: -50px;
             width: 100px;
             height: 100px;
-            /* margin-top: 100px; */
+            
             
         }
     </style>
     <script>
         // 同じイージングで変化させる場合
-        gsap.to(".line_straight", { duration: 1, x: 520, y: 200, repeat: -1, repeatDelay: 1, ease: "pawer4.in" });
+        var line1 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        line1.to(".line_straight", { duration: 1, x: 520, y: 200, ease: "pawer4.in" });
 
         // Y座標だけイージングをbackOutに変更した場合
-        gsap.to(".line_curve", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.in" });
-        gsap.to(".line_curve", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "Back.inOut" });
+        var line2 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        line2.to(".line_curve", { duration: 1, x: 520, ease: "power1.in" });
+        line2.to(".line_curve", { duration: 1, y: 200, ease: "Back.inOut" });
 
         //拡大表示
-        gsap.from(".scale_normal", { duration: 1, x: -100, y: -150, repeat: -1, repeatDelay: 1, scale: 0.1, ease: "pawer4.inOut" });
-        gsap.to(".scale_normal", { duration: 1, x: 150, y: -50, repeat: -1, repeatDelay: 1, scale: 1, ease: "pawer4.inOut" });
+        var scale1 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        scale1.from(".scale_normal", { duration: 1, x: -100, y: -150, scale: 0.1, ease: "pawer4.inOut" });
+        scale1.to(".scale_normal", { duration: 1, x: 150, y: -50, scale: 1, ease: "pawer4.inOut" });
 
         //カーブして拡大表示
-        // gsap.from(".scale_curve", { duration: 1, x:-100, y:-150, repeat: -1, repeatDelay: 1, scale: 0.1, ease: "pawer4.in" });
-        // gsap.to(".scale_curve", { duration: 1, x:150, y:-50, repeat: -1, repeatDelay: 1, scale: 1, ease: "circ.inOut" });
-        gsap.from(".scale_curve", { duration: 1, x: -100, y: -150, repeat: -1, repeatDelay: 1,  ease: "Back.Out" });
-        gsap.to(".scale_curve", { duration: 1, x: 150, y: -50, repeat: -1, repeatDelay: 1,  ease: "circ.inOut" });
-        gsap.from(".scale_curve", { duration: 1, scale: 0.1, repeat: -1, repeatDelay: 1, ease: "Back.Out" });
+        var scale2 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        scale2.from(".scale_curve", { duration: 1, x: -100, y: -150, ease: "Back.Out" });
+        scale2.to(".scale_curve", { duration: 1, x: 150, y: -50, ease: "circ.inOut" });
+        scale2.from(".scale_curve", { duration: 1, scale: 0.1, ease: "Back.Out" });
 
         // Y座標だけイージングをlinearに変更した場合
-        gsap.to(".line_linear", { duration: 1, x: 520, repeat: -1, repeatDelay: 1, ease: "power1.inOut" });
-        gsap.to(".line_linear", { duration: 1, y: 200, repeat: -1, repeatDelay: 1, ease: "linear" });
+        var line3 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        line3.to(".line_linear", { duration: 1, x: 520, ease: "power1.inOut" });
+        line3.to(".line_linear", { duration: 1, y: 200, ease: "linear" });
 
         //移動せずスケールを変更した場合
-        gsap.from(".bound_left", { duration: 1, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1.5, ease: "bounce.out" });
-        gsap.from(".bound_right", { duration: 1.5, repeat: -1, repeatDelay: 1,　scale: 0.1, delay: 1, repeatDelay: 1, ease: "bounce.out" });
+        var bound1 = gsap.timeline({repeat: -1, repeatDelay: 1.5});
+        bound1.from(".bound_left", { duration: 1, scale: 0.1, delay: 1, ease: "bounce.out" });
+        var bound2 = gsap.timeline({repeat: -1, repeatDelay: 1});
+        bound2.from(".bound_right", { duration: 1.5, scale: 0.1, delay: 1, ease: "bounce.out" });
 
 
         //横移動させた場合
-        gsap.to(".move_top", { duration: 1, x: 545, repeat: -1, repeatDelay: 1, ease: "circ.inOut" });
-        gsap.to(".move_bottom", { duration: 1, x: 545, repeat: -1, repeatDelay: 1 ,ease: "circ.inOut"});
-        gsap.to(".move_bottom", { duration: 1, rotate: -30, delay:0.1, repeat: -1, repeatDelay: 1 ,ease: "back.out"});
-        gsap.to(".move_bottom", { duration: 1, rotate: 0, delay:0.5, repeat: -1, repeatDelay: 1 ,ease: "back.out"});
+        var move = gsap.timeline({repeat: -1, repeatDelay: 1});
+        move.to(".move_top", { duration: 1, x: 545, ease: "circ.inOut" });
+        move.to(".move_bottom", { duration: 1, x: 545, ease: "circ.inOut"});
+        move.to(".move_bottom", { duration: 1, rotate: -30, delay:0.1, ease: "back.out"});
+        move.to(".move_bottom", { duration: 1, rotate: 0, delay:0.5, ease: "back.out"});
         
         //落下させた場合
-        gsap.to(".fall_left", { duration: 1, y: 300, repeat: -1, repeatDelay: 1, ease: "bounce.out" });
-        gsap.to(".fall_right", { duration: 1, y: 300, repeat: -1, repeatDelay: 1, ease: "bounce.out" });
-        gsap.from(".fall_right", { duration: 1, scaleX: 1, scaleY: 2, repeat: -1, repeatDelay: 1, ease: "back.out(4)" });
+        var fall = gsap.timeline({repeat: -1, repeatDelay: 1});
+        fall.to(".fall_left", { duration: 1, y: 300, ease: "bounce.out" });
+        fall.to(".fall_right", { duration: 1, y: 300, ease: "bounce.out" });
+        fall.from(".fall_right", { duration: 1, scaleX: 1, scaleY: 2, ease: "back.out(4)" });
         
 
     </script>
