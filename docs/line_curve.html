@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,17 +12,15 @@
       width: 720px;
       height: 405px;
       background-color: #fbf9eb;
-      margin-top: 50px;
-
     }
 
     .line_straight1 {
       position: absolute;
       opacity: 0.3;
     }
-
   </style>
 </head>
+
 <body>
   <div class="line">
     <div class="line_straight1">
@@ -33,15 +32,16 @@
   </div>
   <script>
     // 同じイージングで変化させる場合
-    var line1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_straight1", { x: 50, y: 50 })
       .to(".line_straight1", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
 
     // Y座標だけイージングをbackOutに変更した場合
-    var line2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_curve", { x: 50, y: 50 })
       .to(".line_curve", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
       .to(".line_curve", { duration: 1, y: 230, ease: "back.out" }, 0);
   </script>
 </body>
+
 </html>

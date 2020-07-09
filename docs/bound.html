@@ -11,7 +11,6 @@
       width: 720px;
       height: 405px;
       background-color: #fbf9eb;
-      margin-top: 50px;
       position: relative;
       display: flex;
       justify-content: center;
@@ -49,10 +48,10 @@
   </div>
   <script>
     //移動せずスケールを変更した場合
-    var bound1 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+    gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
       .set(".bound_left", { scaleX: 0.3, scaleY: 0.3 })
       .to(".bound_left", { duration: 1, scale: 1, delay: 0.6, ease: "elastic.out" });
-    var bound2 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+    gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
       .set(".bound_right", { scaleX: 0.3, scaleY: 0.3 })
       .to(".bound_right", { duration: 1, scaleX: 1, delay: 0.6, ease: "elastic.out" }, 0)
       .to(".bound_right", { duration: 1, scaleY: 1, delay: 0.5, ease: "elastic.out" }, 0);

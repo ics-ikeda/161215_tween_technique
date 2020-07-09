@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +12,8 @@
       width: 720px;
       height: 405px;
       background-color: #fbf9eb;
-      margin-top: 50px;
-
     }
+
     .line_straight2 {
       position: absolute;
       opacity: 0.3;
@@ -22,9 +22,9 @@
     .line_linear {
       position: absolute;
     }
-
   </style>
 </head>
+
 <body>
   <div class="line">
     <div class="line_straight2">
@@ -35,15 +35,16 @@
     </div>
   </div>
   <script>
-   // Y座標だけイージングをlinearに変更した場合
-   var line3 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+    // Y座標だけイージングをlinearに変更した場合
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_straight2", { x: 50, y: 50 })
       .to(".line_straight2", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
 
-    var line4 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_linear", { x: 50, y: 50 })
       .to(".line_linear", { duration: 1, x: 540, ease: "power1.inOut" }, 0)
       .to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
   </script>
 </body>
+
 </html>
