@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+  <title>ズルいトゥイーンアニメーション</title>
+  <style>
+    .move {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
+    }
+
+    .move_top {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .move_bottom {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="move">
+    <div class="move_top">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+    <div class="move_bottom">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+  </div>
+  <script>
+    //横移動させた場合
+    var move1 = gsap.timeline({ repeat: -1, repeatDelay: 1.5 })
+      .set(".move_top", { x: 75, y: 125 })
+      .to(".move_top", { duration: 0.6, delay: 0.5, x: 545, ease: "circ.inOut" });
+    var move2 = gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
+      .set(".move_bottom", { x: 75, y: 275 })
+      .to(".move_bottom", { duration: 0.6, x: 75, rotate: -30, ease: "circ.inOut" })
+      .to(".move_bottom", { duration: 0.4, x: 545, rotate: 0, ease: "circ.Out" })
+      .to(".move_bottom", { duration: 0.6, rotate: 10, ease: "circ.inOut" })
+      .to(".move_bottom", { duration: 0.3, rotate: 0, ease: "back.out(4)" });
+  </script>
+</body>
+
+</html>
