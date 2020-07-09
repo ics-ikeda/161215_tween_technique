@@ -2,260 +2,260 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"> </script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"> </script>
+  <title>Document</title>
 </head>
 
 <body>
-    <div class="line">
-        <div class="line_straight">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-        <div class="line_curve">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
+  <div class="line">
+    <div class="line_straight">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+    <div class="line_curve">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+  </div>
+
+  <div class="scale">
+    <div class="scale_normal">
+      <img src="images/mitarashi_400.png" width="400" height="400" alt="">
+    </div>
+    <div class="scale_curve">
+      <img src="images/mitarashi_400.png" width="400" height="400" alt="">
     </div>
 
-    <div class="scale">
-        <div class="scale_normal">
-            <img src="images/mitarashi_400.png" width="400" height="400" alt="">
-        </div>
-        <div class="scale_curve">
-            <img src="images/mitarashi_400.png" width="400" height="400" alt="">
-        </div>
+  </div>
 
+  <div class="line">
+    <div class="line_straight">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+    <div class="line_linear">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+  </div>
+
+  <div class="bound">
+    <div class="bound_left">
+      <img src="images/mitarashi_200.png" width="200" height="200" alt="">
+    </div>
+    <div class="bound_right">
+      <img src="images/mitarashi_200.png" width="200" height="200" alt="">
+    </div>
+  </div>
+
+  <div class="move">
+    <div class="move_top">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+    <div class="move_bottom">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+  </div>
+
+  <div class="fall">
+    <div class="fall_left">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
+    </div>
+    <div class="fall_right">
+      <img src="images/mitarashi_100.png" width="100" height="100" alt="">
     </div>
 
-    <div class="line">
-        <div class="line_straight">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-        <div class="line_linear">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-    </div>
+  </div>
+  <style>
+    .line {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
 
-    <div class="bound">
-        <div class="bound_left">
-            <img src="images/mitarashi_200.png" width="200" height="200" alt="">
-        </div>
-        <div class="bound_right">
-            <img src="images/mitarashi_200.png" width="200" height="200" alt="">
-        </div>
-    </div>
+    }
 
-    <div class="move">
-        <div class="move_top">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-        <div class="move_bottom">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-    </div>
+    .line_straight {
+      position: absolute;
+      opacity: 0.3;
+    }
 
-    <div class="fall">
-        <div class="fall_left">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
-        <div class="fall_right">
-            <img src="images/mitarashi_100.png" width="100" height="100" alt="">
-        </div>
+    .scale {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
 
-    </div>
-    <style>
-        .line {
-            position: relative;
-            width: 720px;
-            height: 405px;
-            background-color: #fbf9eb;
-            margin-top: 50px;
+    }
 
-        }
+    .scale_normal {
+      position: absolute;
+      opacity: 0.3;
+      top: -200px;
+      left: -200px;
+    }
 
-        .line_straight {
-            position: absolute;
-            opacity: 0.3;
-        }
+    .scale_curve {
+      position: absolute;
+      top: -200px;
+      left: -200px;
+    }
 
-        .scale {
-            position: relative;
-            width: 720px;
-            height: 405px;
-            background-color: #fbf9eb;
-            margin-top: 50px;
+    .line_linear {
+      position: absolute;
+    }
 
-        }
-
-        .scale_normal {
-            position: absolute;
-            opacity: 0.3;
-            top: -200px;
-            left: -200px;
-        }
-
-        .scale_curve {
-            position: absolute;
-            top: -200px;
-            left: -200px;
-        }
-
-        .line_linear {
-            position: absolute;
-        }
-
-        .bound {
-            width: 720px;
-            height: 405px;
-            background-color: #fbf9eb;
-            margin-top: 50px;
-            position: relative;
-            display: flex;
-            justify-content: center;
+    .bound {
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
+      position: relative;
+      display: flex;
+      justify-content: center;
 
 
-        }
+    }
 
-        .bound_left {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            margin-right: 50px;
-            margin-top: 100px;
-            left: 150px;
-        }
+    .bound_left {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      margin-right: 50px;
+      margin-top: 100px;
+      left: 150px;
+    }
 
-        .bound_right {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            margin-top: 100px;
-            left: 400px;
-        }
+    .bound_right {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      margin-top: 100px;
+      left: 400px;
+    }
 
-        .move {
-            position: relative;
-            width: 720px;
-            height: 405px;
-            background-color: #fbf9eb;
-            margin-top: 50px;
-
-
-        }
-
-        .move_top {
-            position: absolute;
-            display: flex;
-            flex-wrap: wrap;
+    .move {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
 
 
-        }
+    }
 
-        .move_bottom {
-            position: absolute;
-            display: flex;
-            flex-wrap: wrap;
+    .move_top {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
 
 
-        }
+    }
 
-        .fall {
-            position: relative;
-            width: 720px;
-            height: 405px;
-            background-color: #fbf9eb;
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
+    .move_bottom {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
 
-        }
 
-        .fall_left {
-            position: absolute;
-            top: -50px;
-            left: 30px;
-            width: 100px;
-            height: 100px;
+    }
+
+    .fall {
+      position: relative;
+      width: 720px;
+      height: 405px;
+      background-color: #fbf9eb;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+
+    }
+
+    .fall_left {
+      position: absolute;
+      top: -50px;
+      left: 30px;
+      width: 100px;
+      height: 100px;
 
 
 
-        }
+    }
 
-        .fall_right {
-            position: absolute;
-            top: -50px;
-            left: 40px;
-            width: 100px;
-            height: 100px;
-
-
-        }
-    </style>
-    <script>
-        // 同じイージングで変化させる場合
-        var line1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set(".line_straight", { x: 50, y: 50 })
-            .to(".line_straight", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
-
-        // Y座標だけイージングをbackOutに変更した場合
-        var line2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set(".line_curve", { x: 50, y: 50 })
-            .to(".line_curve", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
-            .to(".line_curve", { duration: 1, y: 230, ease: "back.out" }, 0);
-
-        //拡大表示
-        var scale1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set('.scale_normal', { x: 20, y: 20, scale: 0.1 })
-            .to('.scale_normal', { duration: 1, x: 380, y: 200, scale: 1, ease: 'quart.inOut' });
-
-        //カーブして拡大表示
-        var scale2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set('.scale_curve', { x: 20, y: 20, scale: 0.1 })
-            .to('.scale_curve', { duration: 1, x: 380, ease: 'quart.inOut' }, 0)
-            .to('.scale_curve', { duration: 1, y: 200, ease: 'back.out' }, 0)
-            .to('.scale_curve', { duration: 1, scale: 1, ease: 'quart.inOut' }, 0);
+    .fall_right {
+      position: absolute;
+      top: -50px;
+      left: 40px;
+      width: 100px;
+      height: 100px;
 
 
-        // Y座標だけイージングをlinearに変更した場合
-        var line3 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-        line3.set(".line_linear", { x: 50, y: 50 })
-        line3.to(".line_linear", { duration: 1, x: 540, ease: "power1.inOut" }, 0)
-        line3.to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
+    }
+  </style>
+  <script>
+    // 同じイージングで変化させる場合
+    var line1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set(".line_straight", { x: 50, y: 50 })
+      .to(".line_straight", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
 
-        //移動せずスケールを変更した場合
-        var bound1 = gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
-            .set(".bound_left", { x: -10, y: 20, scaleX: 0.3, scaleY: 0.3})
-            .to(".bound_left", { duration: 1, scale: 1, delay: 0.3, ease: "bounce.out" });
-        var bound2 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
-            .set(".bound_right", { x: 10, y: 20, scaleX: 0.3, scaleY: 0.3})
-            .to(".bound_right", { duration: 0.5, scaleX: 1, delay: 0.3, ease: "bounce.out" })
-            .to(".bound_right", { duration: 0.5, scaleY: 1, delay: 0.1, ease: "bounce.out" });
+    // Y座標だけイージングをbackOutに変更した場合
+    var line2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set(".line_curve", { x: 50, y: 50 })
+      .to(".line_curve", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
+      .to(".line_curve", { duration: 1, y: 230, ease: "back.out" }, 0);
 
+    //拡大表示
+    var scale1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set('.scale_normal', { x: 20, y: 20, scale: 0.1 })
+      .to('.scale_normal', { duration: 1, x: 380, y: 200, scale: 1, ease: 'quart.inOut' });
 
-        //横移動させた場合
-        var move1 = gsap.timeline({ repeat: -1, repeatDelay: 0.9 })
-            .set(".move_top", { x: 75, y: 125 })
-            .to(".move_top", { duration: 0.7, x: 545, ease: "circ.inOut" });
-        var move2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set(".move_bottom", { x: 75, y: 275 })
-            .to(".move_bottom", { duration: 0.7, x: 545, rotate: -30, ease: "circ.inOut" })
-            .to(".move_bottom", { duration: 0.2, rotate: 10, ease: "back.out" })
-            .to(".move_bottom", { duration: 0.2, rotate: 0, ease: "back.out" });
-
-        //落下させた場合
-        var fall1 = gsap.timeline({ repeat: -1, repeatDelay: 0.8 })
-            .set(".fall_left", { x: 170, y: -100 })
-            .to(".fall_left", { duration: 0.8, y: 300, ease: "bounce.out" });
-        var fall2 = gsap.timeline({ repeat: -1, repeatDelay: 0.8 })
-            .set(".fall_right", { x: 420, y: -100, scaleX: 0.2, scaleY: 2 })
-            .to(".fall_right", { duration: 0.5, y: 300, ease: "bounce.out" })
-            .to(".fall_right", { duration: 0.3, scaleX: 1, scaleY: 1, ease: "back.out(4)" });
+    //カーブして拡大表示
+    var scale2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set('.scale_curve', { x: 20, y: 20, scale: 0.1 })
+      .to('.scale_curve', { duration: 1, x: 380, ease: 'quart.inOut' }, 0)
+      .to('.scale_curve', { duration: 1, y: 200, ease: 'back.out' }, 0)
+      .to('.scale_curve', { duration: 1, scale: 1, ease: 'quart.inOut' }, 0);
 
 
-    </script>
+    // Y座標だけイージングをlinearに変更した場合
+    var line3 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+    line3.set(".line_linear", { x: 50, y: 50 })
+    line3.to(".line_linear", { duration: 1, x: 540, ease: "power1.inOut" }, 0)
+    line3.to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
+
+    //移動せずスケールを変更した場合
+    var bound1 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+      .set(".bound_left", { scaleX: 0.3, scaleY: 0.3 })
+      .to(".bound_left", { duration: 1, scale: 1, delay: 0.6, ease: "elastic.out" });
+    var bound2 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+      .set(".bound_right", {　scaleX: 0.3, scaleY: 0.3 })
+      .to(".bound_right", { duration: 1, scaleX: 1, delay: 0.6, ease: "elastic.out" }, 0)
+      .to(".bound_right", { duration: 1, scaleY: 1, delay: 0.5, ease: "elastic.out" }, 0);
+
+
+    //横移動させた場合
+    var move1 = gsap.timeline({ repeat: -1, repeatDelay: 0.9 })
+      .set(".move_top", { x: 75, y: 125 })
+      .to(".move_top", { duration: 0.7, x: 545, ease: "circ.inOut" });
+    var move2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set(".move_bottom", { x: 75, y: 275 })
+      .to(".move_bottom", { duration: 0.7, x: 545, rotate: -30, ease: "circ.inOut" })
+      .to(".move_bottom", { duration: 0.2, rotate: 10, ease: "back.out" })
+      .to(".move_bottom", { duration: 0.2, rotate: 0, ease: "back.out" });
+
+    //落下させた場合
+    var fall1 = gsap.timeline({ repeat: -1, repeatDelay: 0.8 })
+      .set(".fall_left", { x: 170, y: -100 })
+      .to(".fall_left", { duration: 0.8, y: 300, ease: "bounce.out" });
+    var fall2 = gsap.timeline({ repeat: -1, repeatDelay: 0.8 })
+      .set(".fall_right", { x: 420, y: -100, scaleX: 0.2, scaleY: 2 })
+      .to(".fall_right", { duration: 0.5, y: 300, ease: "bounce.out" })
+      .to(".fall_right", { duration: 0.3, scaleX: 1, scaleY: 1, ease: "back.out(4)" });
+
+
+  </script>
 
 </body>
 
