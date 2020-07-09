@@ -52,10 +52,10 @@
   <script>
     //落下させた場合
     var fall1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .set(".fall_left", { x: 170, y: -100 })
+      .set(".fall_left", { y: -100 })
       .to(".fall_left", { duration: 1, delay: 0.5, y: 300, ease: "bounce.out" });
     var fall2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .set(".fall_right", { x: 420, y: -100, scaleX: 0.2, scaleY: 2 })
+      .set(".fall_right", { y: -100, scaleX: 0.2, scaleY: 2 })
       .to(".fall_right", { duration: 1, delay: 0.5, y: 300, ease: "bounce.out" }, 0)
       .to(".fall_right", { duration: 0.3, delay: 0.9, scaleX: 1, scaleY: 1, ease: "back.out(4)" }, 0);
   </script>

@@ -19,12 +19,14 @@
       position: absolute;
       display: flex;
       flex-wrap: wrap;
+      top: 80px;
     }
 
     .move_bottom {
       position: absolute;
       display: flex;
       flex-wrap: wrap;
+      top: 250px;
     }
   </style>
 </head>
@@ -41,10 +43,10 @@
   <script>
     //横移動させた場合
     var move1 = gsap.timeline({ repeat: -1, repeatDelay: 1.5 })
-      .set(".move_top", { x: 75, y: 125 })
+      .set(".move_top", { x: 75 })
       .to(".move_top", { duration: 0.6, delay: 0.5, x: 545, ease: "circ.inOut" });
     var move2 = gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
-      .set(".move_bottom", { x: 75, y: 275 })
+      .set(".move_bottom", { x: 75 })
       .to(".move_bottom", { duration: 0.6, x: 75, rotate: -30, ease: "circ.inOut" })
       .to(".move_bottom", { duration: 0.4, x: 545, rotate: 0, ease: "circ.Out" })
       .to(".move_bottom", { duration: 0.6, rotate: 10, ease: "circ.inOut" })
