@@ -42,7 +42,7 @@
 
     gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_linear", { x: 50, y: 50 })
-      .to(".line_linear", { duration: 1, x: 540, ease: "power1.inOut" }, 0)
+      .to(".line_linear", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
       .to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
   </script>
 </body>
