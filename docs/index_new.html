@@ -198,13 +198,13 @@
         // 同じイージングで変化させる場合
         var line1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
             .set(".line_straight", { x: 50, y: 50 })
-            .to(".line_straight", { duration: 1, x: 520, y: 200, ease: "quart.inOut" });
+            .to(".line_straight", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
 
         // Y座標だけイージングをbackOutに変更した場合
         var line2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
             .set(".line_curve", { x: 50, y: 50 })
-            .to(".line_curve", { duration: 1, x: 520, ease: "quart.inOut" }, 0)
-            .to(".line_curve", { duration: 1, y: 200, ease: "back.out" }, 0);
+            .to(".line_curve", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
+            .to(".line_curve", { duration: 1, y: 230, ease: "back.out" }, 0);
 
         //拡大表示
         var scale1 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
@@ -222,16 +222,17 @@
         // Y座標だけイージングをlinearに変更した場合
         var line3 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
         line3.set(".line_linear", { x: 50, y: 50 })
-        line3.to(".line_linear", { duration: 1, x: 520, ease: "power1.inOut" }, 0)
-        line3.to(".line_linear", { duration: 1, y: 200, ease: "linear" }, 0);
+        line3.to(".line_linear", { duration: 1, x: 540, ease: "power1.inOut" }, 0)
+        line3.to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
 
         //移動せずスケールを変更した場合
-        var bound1 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
-            .set(".bound_left", { x: -10, y: 20, scale: 0.3 })
-            .to(".bound_left", { duration: 1, scale: 1, ease: "bounce.out" });
-        var bound2 = gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-            .set(".bound_right", { x: 10, y: 20, scale: 0.3 })
-            .to(".bound_right", { duration: 1, scale: 1, delay: 0.1, ease: "bounce.out" });
+        var bound1 = gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
+            .set(".bound_left", { x: -10, y: 20, scaleX: 0.3, scaleY: 0.3})
+            .to(".bound_left", { duration: 1, scale: 1, delay: 0.3, ease: "bounce.out" });
+        var bound2 = gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+            .set(".bound_right", { x: 10, y: 20, scaleX: 0.3, scaleY: 0.3})
+            .to(".bound_right", { duration: 0.5, scaleX: 1, delay: 0.3, ease: "bounce.out" })
+            .to(".bound_right", { duration: 0.5, scaleY: 1, delay: 0.1, ease: "bounce.out" });
 
 
         //横移動させた場合
