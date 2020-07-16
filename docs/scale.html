@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,24 +17,26 @@
 
     .scale_curve {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 20px;
+      left: 20px;
     }
 
     .scale_normal {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 20px;
+      left: 20px;
       opacity: 0.3;
     }
 
-    .scale_curve img, .scale_normal img {
+    .scale_curve img,
+    .scale_normal img {
       position: absolute;
       top: -200px;
       left: -200px;
     }
   </style>
 </head>
+
 <body>
   <div class="scale">
     <div class="scale_normal">
@@ -46,16 +49,17 @@
   <script>
     // 拡大表示
     // 同じイージングで変化させる場合
-    gsap.timeline({repeat: -1, repeatDelay: 0.5})
-      .set('.scale_normal', {x: 20, y: 20, scale: 0.1})
-      .to('.scale_normal', {duration: 1, x: "+=360", y: "+=180", scale: 1, ease: 'quart.inOut'});
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set('.scale_normal', { scale: 0.1 })
+      .to('.scale_normal', { duration: 1, x: "+=360", y: "+=180", scale: 1, ease: 'quart.inOut' });
 
     // 拡大のトゥイーンを追加した場合
-    gsap.timeline({repeat: -1, repeatDelay: 0.5})
-      .set('.scale_curve', {x: 20, y: 20, scale: 0.1})
-      .to('.scale_curve', {duration: 1, x: "+=360", ease: 'quart.inOut'}, 0)
-      .to('.scale_curve', {duration: 1, y: "+=180", ease: 'back.out'}, 0)
-      .to('.scale_curve', {duration: 1, scale: 1, ease: 'quart.inOut'}, 0);
+    gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
+      .set('.scale_curve', { scale: 0.1 })
+      .to('.scale_curve', { duration: 1, x: "+=360", ease: 'quart.inOut' }, 0)
+      .to('.scale_curve', { duration: 1, y: "+=180", ease: 'back.out' }, 0)
+      .to('.scale_curve', { duration: 1, scale: 1, ease: 'quart.inOut' }, 0);
   </script>
 </body>
+
 </html>

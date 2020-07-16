@@ -16,7 +16,15 @@
 
     .line_straight1 {
       position: absolute;
+      top: 50px;
+      left: 50px;
       opacity: 0.3;
+    }
+
+    .line_curve {
+      position: absolute;
+      top: 50px;
+      left: 50px;
     }
   </style>
 </head>
@@ -33,12 +41,10 @@
   <script>
     // 同じイージングで変化させる場合
     gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .set(".line_straight1", { x: 50, y: 50 })
       .to(".line_straight1", { duration: 1, x: "+=490", y: "+=180", ease: "quart.inOut" });
 
     // Y座標だけイージングをbackOutに変更した場合
     gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
-      .set(".line_curve", { x: 50, y: 50 })
       .to(".line_curve", { duration: 1, x: "+=490", ease: "quart.inOut" }, 0)
       .to(".line_curve", { duration: 1, y: "+=180", ease: "back.out" }, 0);
   </script>
