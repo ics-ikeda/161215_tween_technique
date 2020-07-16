@@ -16,19 +16,18 @@
 
     .move_top {
       position: absolute;
-      display: flex;
-      flex-wrap: wrap;
       top: 170px;
+      left: 110px;
     }
 
     .move_bottom {
       position: absolute;
-      display: flex;
-      flex-wrap: wrap;
       top: 330px;
+      left: 110px;
     }
+
     .move_top img,
-    .move_bottom img{
+    .move_bottom img {
       position: absolute;
       top: -100px;
       left: -50px;
@@ -48,15 +47,12 @@
   <script>
     //横移動させた場合
     gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
-      .set(".move_top", { x: 110 })
-      .to(".move_top", { duration: 0.6, delay: 0.5, x: 600, ease: "circ.inOut" });
+      .to(".move_top", { duration: 0.6, delay: 0.5, x: "+=490" /*　相対化する　*/, ease: "circ.inOut" });
     gsap.timeline({ repeat: -1, repeatDelay: 0.1 })
-      .set(".move_bottom", { x: 110 })
-      .to(".move_bottom", { duration: 0.4, delay: 0.2, x: 110, ease: "circ.Out" },0)
-      .to(".move_bottom", { duration: 0.4, delay: 0.2, rotate: -30, ease: "circ.Out" },0)
-      .to(".move_bottom", { duration: 0.6, delay: 0.5, x: 600, ease: "circ.inOut" },0)
-      .to(".move_bottom", { duration: 0.6, delay: 0.6, rotate: 10, ease: "circ.inOut" },0)
-      .to(".move_bottom", { duration: 0.6, delay: 1.1, rotate: 0, ease: "back.out(4)" },0);
+      .to(".move_bottom", { duration: 0.4, delay: 0.2, rotate: -30, ease: "circ.Out" }, 0)
+      .to(".move_bottom", { duration: 0.6, delay: 0.5, x: "+=490" /*　相対化する　*/, ease: "circ.inOut" }, 0)
+      .to(".move_bottom", { duration: 0.6, delay: 0.6, rotate: 10, ease: "circ.inOut" }, 0)
+      .to(".move_bottom", { duration: 0.6, delay: 1.1, rotate: 0, ease: "back.out(4)" }, 0);
   </script>
 </body>
 
