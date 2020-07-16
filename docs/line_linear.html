@@ -38,12 +38,12 @@
     // Y座標だけイージングをlinearに変更した場合
     gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_straight2", { x: 50, y: 50 })
-      .to(".line_straight2", { duration: 1, x: 540, y: 230, ease: "quart.inOut" });
+      .to(".line_straight2", { duration: 1, x: "+=490", y: "+=180", ease: "quart.inOut" });
 
     gsap.timeline({ repeat: -1, repeatDelay: 0.5 })
       .set(".line_linear", { x: 50, y: 50 })
-      .to(".line_linear", { duration: 1, x: 540, ease: "quart.inOut" }, 0)
-      .to(".line_linear", { duration: 1, y: 230, ease: "linear" }, 0);
+      .to(".line_linear", { duration: 1, x: "+=490", ease: "quart.inOut" }, 0)
+      .to(".line_linear", { duration: 1, y: "+=180", ease: "linear" }, 0);
   </script>
 </body>
 

@@ -48,13 +48,13 @@
     // 同じイージングで変化させる場合
     gsap.timeline({repeat: -1, repeatDelay: 0.5})
       .set('.scale_normal', {x: 20, y: 20, scale: 0.1})
-      .to('.scale_normal', {duration: 1, x: 380, y: 200, scale: 1, ease: 'quart.inOut'});
+      .to('.scale_normal', {duration: 1, x: "+=360", y: "+=180", scale: 1, ease: 'quart.inOut'});
 
     // 拡大のトゥイーンを追加した場合
     gsap.timeline({repeat: -1, repeatDelay: 0.5})
       .set('.scale_curve', {x: 20, y: 20, scale: 0.1})
-      .to('.scale_curve', {duration: 1, x: 380, ease: 'quart.inOut'}, 0)
-      .to('.scale_curve', {duration: 1, y: 200, ease: 'back.out'}, 0)
+      .to('.scale_curve', {duration: 1, x: "+=360", ease: 'quart.inOut'}, 0)
+      .to('.scale_curve', {duration: 1, y: "+=180", ease: 'back.out'}, 0)
       .to('.scale_curve', {duration: 1, scale: 1, ease: 'quart.inOut'}, 0);
   </script>
 </body>

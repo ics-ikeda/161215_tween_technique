@@ -47,10 +47,10 @@
   <script>
     //横移動させた場合
     gsap.timeline({ repeat: -1, repeatDelay: 0.7 })
-      .to(".move_top", { duration: 0.6, delay: 0.5, x: "+=490" /*　相対化する　*/, ease: "circ.inOut" });
+      .to(".move_top", { duration: 0.6, delay: 0.5, x: "+=490", ease: "circ.inOut" });
     gsap.timeline({ repeat: -1, repeatDelay: 0.1 })
       .to(".move_bottom", { duration: 0.4, delay: 0.2, rotate: -30, ease: "circ.Out" }, 0)
-      .to(".move_bottom", { duration: 0.6, delay: 0.5, x: "+=490" /*　相対化する　*/, ease: "circ.inOut" }, 0)
+      .to(".move_bottom", { duration: 0.6, delay: 0.5, x: "+=490", ease: "circ.inOut" }, 0)
       .to(".move_bottom", { duration: 0.6, delay: 0.6, rotate: 10, ease: "circ.inOut" }, 0)
       .to(".move_bottom", { duration: 0.6, delay: 1.1, rotate: 0, ease: "back.out(4)" }, 0);
   </script>
